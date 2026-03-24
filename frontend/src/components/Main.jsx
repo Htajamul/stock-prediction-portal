@@ -4,6 +4,7 @@ import Button from './Button'
 const Main = () => {
   return (
     <>
+    
     <div className='container'>
         <div className='p-s text-center bg-light-dark rounded'>
             <h1 className='text-light'>Stock prediction Potal</h1>
@@ -16,6 +17,7 @@ const Main = () => {
             <Button text='login' class='btn-outline-info'/>
         </div>
     </div>
+   
     </>
   )
 }
