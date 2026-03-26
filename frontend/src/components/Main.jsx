@@ -14,7 +14,7 @@ const Main = () => {
                 Popper for our tooltips and popovers. For more information about what’s 
                 included in Bootstrap, please see our contents section.
             </p>
-            <Button text='login' class='btn-outline-info'/>
+            <Button text='Explore Now' class='btn-outline-info' url='/dashboard'/>
         </div>
     </div>
    
