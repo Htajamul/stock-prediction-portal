@@ -10,6 +10,8 @@ import AuthProvider from './AuthProvider'
 import Dashboard from './components/dashboard/Dashboard'
 import PrivateRout from './PrivateRout'
 import PublicRout from './PublicRout'
+import ForGetPassword from './pages/ForGetPassword'
+import ResetPassword from './pages/ResetPassword'
 function App() {
 
   return (
@@ -19,6 +21,8 @@ function App() {
           <Header />
           <Routes>
             <Route path='/' element={<Main />} />
+            <Route path='/forget' element={<ForGetPassword/>} />
+            <Route path='//reset/:uid/:token' element={<ResetPassword/>} />
             <Route path='/register' element={<PublicRout><Register /></PublicRout>} />
             <Route path='/login' element={<PublicRout><Login /></PublicRout>} />
             <Route path='/dashboard' element={<PrivateRout><Dashboard /></PrivateRout>} />

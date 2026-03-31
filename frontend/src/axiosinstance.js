@@ -29,13 +29,20 @@ axiosInstance.interceptors.request.use(
 // so that we send refresh token to the backend which send new 
 
 axiosInstance.interceptors.response.use(
+    // Runs when response is successful (status 2xx)
     function(response){
         return response
     },
     // Hnadle failed responses
+    // Runs when response has error (4xx, 5xx)
     async function(error){
+        // Original request that failed
         const originalRequest = error.config;
+        // Check:
+        // 1. Unauthorized error (401)
+        // 2. Request not retried yet (avoid infinite loop)
         if(error.response.status===401 && !originalRequest.retry){
+            // Mark request as retried
             originalRequest.retry=true;
             const refreshToken = localStorage.getItem('refreshToken')
             try {
@@ -52,6 +59,7 @@ axiosInstance.interceptors.response.use(
                 // and login this this block executes bcoz life time of REFRESH TOKEN in only 1 day
                 localStorage.removeItem('accessToken')
                 localStorage.removeItem('refreshToken')
+                window.location.href = "/login";
             }
         }
         return Promise.reject(error)
@@ -62,3 +70,5 @@ axiosInstance.interceptors.response.use(
 
 
 export default axiosInstance
+
+

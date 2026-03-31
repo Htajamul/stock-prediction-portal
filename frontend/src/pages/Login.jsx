@@ -4,6 +4,7 @@ import {faSpinner} from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios'
 import {useNavigate} from'react-router-dom'
 import { AuthContext } from '../AuthProvider'
+import { Link } from 'react-router-dom'
 
 
 const Login = () => {
@@ -51,6 +52,7 @@ const Login = () => {
               <div className='mb-3'>
                 <input name='password' type="password" className='form-control' placeholder='set password' value={password} onChange={(e) => setPassword(e.target.value)} />
               </div>
+              <Link to="/forget" className="btn btn-outline-primary w-100 mt-2 mb-3">Forgot Password</Link>
               {error && <div className='text-danger'>{error}</div>}
               {loading ? (
                 <button type='submit' className='btn btn-info d-block mx-auto' disabled><FontAwesomeIcon icon={faSpinner} spin /> Logging in...</button>

@@ -39,12 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
+    # 'rest_framework',
     'accounts',
     'api',
     'corsheaders',
     'rest_framework_simplejwt',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -127,7 +129,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 CORS_ALLOWED_ORIGINS =[
-    ' http://localhost:5173',
+    'http://localhost:5173',
 ]
 
 
@@ -141,3 +143,13 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME':timedelta(minutes=15),
     'REFRESH_TOKEN_LIFETIME':timedelta(days=1)
 }
+ 
+
+# FOR PASSWORD FORGET/RESET PASSWORD
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com' # Simple Mail Transfer Protocol (used to send emails)
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'htajamul2@gmail.com'
+EMAIL_HOST_PASSWORD = 'lkzl rozm hkkh ddrk'

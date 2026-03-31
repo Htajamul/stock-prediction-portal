@@ -21,5 +21,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # Base api endpoint
-    path('api/v1/',include('api.urls'))
+    path('api/v1/',include('api.urls')),
+
+    # step 3rd FOR GOOGLE AUTH
+    # path('api/auth/', include('dj_rest_auth.urls')), 
+    # # WHY: gives login, logout, password reset APIs
+
+    # path('api/auth/registration/', include('dj_rest_auth.registration.urls')),
+    # # WHY: required for social login (Google)
 ]
