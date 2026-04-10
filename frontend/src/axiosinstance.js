@@ -59,7 +59,7 @@ axiosInstance.interceptors.response.use(
                 // and login this this block executes bcoz life time of REFRESH TOKEN in only 1 day
                 localStorage.removeItem('accessToken')
                 localStorage.removeItem('refreshToken')
-                window.location.href = "/login";
+                // window.location.href = "/login";
             }
         }
         return Promise.reject(error)

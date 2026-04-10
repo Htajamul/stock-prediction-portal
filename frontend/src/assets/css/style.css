@@ -1,16 +1,135 @@
-body{
-    background-color:#212529;
-    color: aliceblue;
+
+
+
+
+body {
+  background-color: #0f172a;
+  color: #e2e8f0;
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
-.bg-light-dark{
-    background-color: #2B3035;
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
-#root{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+
+.container {
+  flex: 1;
 }
-.container{
-    flex: 1;
+
+/* optional dark card */
+.bg-light-dark {
+  background-color: #2B3035;
+}
+
+/* ===== LOGIN PAGE ===== */
+
+.login-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #1e293b, #0f172a);
+}
+
+.login-card {
+  width: 380px;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  color: #111;
+}
+
+/* title */
+.title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/* form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.input:focus {
+  border-color: #1877f2;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
+}
+
+/* login button */
+.login-btn {
+  padding: 12px;
+  background: #0ea5e9;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.login-btn:hover {
+  background: #0284c7;
+}
+
+/* error */
+.error {
+  color: red;
+  font-size: 13px;
+}
+
+/* social buttons */
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 11px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+/* facebook */
+.facebook {
+  background: #1877f2;
+  color: white;
+  border: none;
+}
+
+.facebook:hover {
+  background: #145dbf;
+}
+
+/* forgot password */
+.forgot {
+  text-align: center;
+  font-size: 13px;
+  color: #555;
+  text-decoration: none;
+  margin-top: 6px;
+}
+
+.forgot:hover {
+  color: #000;
 }

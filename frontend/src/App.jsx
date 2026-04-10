@@ -22,7 +22,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Main />} />
             <Route path='/forget' element={<ForGetPassword/>} />
-            <Route path='//reset/:uid/:token' element={<ResetPassword/>} />
+            <Route path='/reset/:uid/:token' element={<ResetPassword/>} />
             <Route path='/register' element={<PublicRout><Register /></PublicRout>} />
             <Route path='/login' element={<PublicRout><Login /></PublicRout>} />
             <Route path='/dashboard' element={<PrivateRout><Dashboard /></PrivateRout>} />

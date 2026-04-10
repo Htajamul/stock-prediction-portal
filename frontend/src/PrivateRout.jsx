@@ -2,8 +2,6 @@ import React,{useContext} from 'react'
 import  { AuthContext } from './AuthProvider'
 import { Navigate } from 'react-router-dom'
 
-
-
 const PrivateRout = ({children}) => {
     const {isLoggedIn} = useContext(AuthContext)
   return isLoggedIn ?(

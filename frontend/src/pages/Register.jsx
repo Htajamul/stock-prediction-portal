@@ -2,6 +2,7 @@ import React ,{useState} from 'react'
 import axios from 'axios'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faSpinner} from '@fortawesome/free-solid-svg-icons'
+import {useNavigate} from 'react-router-dom'
 const Register = () => {
   const [username,setUsername] = useState('')
   const [email,setEmail] = useState('')
@@ -9,6 +10,7 @@ const Register = () => {
   const [errors,setErrors] = useState({})
   const [success,setSuccess] = useState(false)
   const [loading,setLoading] = useState(false)
+  const navigate = useNavigate()
   const hanhlerSubmit = async (e)=>{
     e.preventDefault()
     setLoading(true)
@@ -18,11 +20,12 @@ const Register = () => {
 
     try {
       const response = await axios.post('http://127.0.0.1:8000/api/v1/register/',userData)
-      // console.log('response data',response.data)
-      console.log(response)
+      
       setErrors({})
       setSuccess(true)
       // setSuccess(false)
+      navigate('/login')
+
     } catch (error) {
       setErrors(error.response.data)
       // console.error(error.response.data.username)
@@ -44,7 +47,7 @@ const Register = () => {
           </div>
           <div className='mb-3'>
             <input name='email' type="email" className='form-control' placeholder='enter email' value={email} onChange={(e)=>setEmail(e.target.value)}/>
-            {/* <small>{errors.email && <div className='text-danger'>{errors.email}</div>}</small> */}
+             {/* <small>{errors.email && <div className='text-danger'>{errors.email}</div>}</small>  */}
           </div>
           <div className='mb-3'>
             <input name='password' type="password" className='form-control' placeholder='set password' value={password} onChange={(e)=>setPassword(e.target.value)}/>

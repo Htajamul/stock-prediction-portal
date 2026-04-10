@@ -10,19 +10,17 @@ const ForGetPassword = () => {
     e.preventDefault();
     setLoading(true);
     setMessage("");
-
+    
     try {
       const response = await axiosInstance.post("/forgot-password/", {
         email: email,
       });
-      console.log(response)
 
       setMessage("Reset link sent to your email");
     } catch (error) {
       setMessage(
         error.response?.data?.error || "Something went wrong"
       );
-      console.log(message)
     } finally {
       setLoading(false);
     }
